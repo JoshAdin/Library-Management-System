@@ -1,0 +1,28 @@
+{% extends 'lipapp/base.html' %}
+
+{% block index_active %}active{% endblock %}
+
+    <div class="container-fluid" style="margin-top:60px">
+
+      <h1>{% block myhdg %}Welcome{% endblock %}</h1>
+
+    {% block body_block %}
+    <p>Session Num: {{ value }}</p>
+
+    {% if itemlist %}
+        {% include 'lipapp/index_old.html' %}
+
+    {% else %}
+         <div id="alert1" class="alert alert-danger">
+            <a class="close" data-dismiss="alert">&times;
+            </a><strong>There are no available items!</strong>
+         </div>
+    {% endif %}
+
+    {% endblock %}
+
+
+    </div>
+
+
+

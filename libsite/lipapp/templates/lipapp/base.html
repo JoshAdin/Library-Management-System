@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+      <!-- Bootstrap -->
+        <link href="{% static 'lipapp/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'lipapp/style.css' %}" />
+        <title>MAC Library APP - {% block title %}Welcome!{% endblock %}</title>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+        <script src="{% static 'lipapp/js/main.js' %}"></script>
+        <script src="{% static 'lipapp/js/bootstrap.min.js' %}"></script>
+
+    <style>
+        body {
+            background: white url({% static 'lipapp/images/books-pile.jpg'%}) center fixed;
+            background-size: cover;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+
+    </style>
+
+
+  </head>
+  <body>
+      <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <a href="{% url 'lipapp:index' %}" class="navbar-brand" style="width: 170px; font-style: inherit;">
+                    <strong>MAC &nbsp;LIBRARY</strong></a>
+                <button type="button" class="navbar-toggle" data-target="#navbarCollapse" data-toggle="collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li class="{% block index_active %}{% endblock %}"><a href="{% url 'lipapp:index' %}"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
+                        <li class="{% block suggest_active %}{% endblock %}"><a href="{% url 'lipapp:suggestions' %}"><span class="glyphicon glyphicon-list"></span>&nbsp;Suggestions</a></li>
+                        <li class="{% block newitem_active %}{% endblock %}"><a href="{% url 'lipapp:newitem' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Suggest Item</a></li>
+                        <li class="{% block search_active %}{% endblock %}"><a href="{% url 'lipapp:searchlib' %}"><span class="glyphicon glyphicon-search"></span>&nbsp;Search</a></li>
+                        <li class="{% block myitem_active %}{% endblock %}"><a href="{% url 'lipapp:myitems' %}"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;My Items</a></li>
+                        <li class="{% block about_active %}{% endblock %}"><a href="{% url 'lipapp:about' %}"><span>@</span>&nbsp;About site</a></li>
+                    </ul>
+
+                      <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                            <li><a href=""><span class="glyphicon glyphicon-user"></span>&nbsp;Hello&nbsp;{{ user.first_name }}</a></li>
+                            <li ><a href="{% url 'lipapp:logout' %}"><span class="glyphicon glyphicon-off"></span>&nbsp;LogOut</a></li>
+
+                        {% else %}
+                            <li ><a href="{% url 'lipapp:index' %}"><span class="glyphicon glyphicon-off"></span>&nbsp;LogIn</a></li>
+                        {% endif %}
+                      </ul>
+
+            </div>
+
+
+        </div>
+      </nav>
+
+            <div class="container-fluid" style="margin-top:60px">
+                <h1>{% block myhdg %}{% endblock %}</h1>
+
+                {% block body_block %}{% endblock %}
+
+            </div>
+
+
+    <div class="footer" style="margin-top: 450px">
+          <div class="container">
+              <p>&copy; Developed with <strong style="font-size: 20px;">&hearts;</strong></p>
+          </div>
+    </div>
+
+  </body>
+</html>
+
+{#<!DOCTYPE html>#}
+{#{% load staticfiles %}#}
+{##}
+{#<html>#}
+{#    <head>#}
+{#        <meta charset="utf-8">#}
+{#        <meta http-equiv="X-UA-Compatible" content="IE=edge">#}
+{#        <meta name="viewport" content="width=device-width, initial-scale=1">#}
+{#    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->#}
+{#    <!-- Bootstrap -->#}
+{#        <link href="{% static 'lipapp/css/bootstrap.min.css' %}" rel="stylesheet">#}
+{#        <link rel="stylesheet" type="text/css" href="{% static 'lipapp/style.css' %}" />#}
+{#        <title>MAC Library APP - {% block title %}Welcome!{% endblock %}</title>#}
+{##}
+{#    <style>#}
+{#        body {#}
+{#            background: white url({% static 'lipapp/images/books-pile.jpg'%}) center fixed;#}
+{#            background-size: cover;#}
+{#        }#}
+{#    </style>#}
+{##}
+{#    </head>#}
+{##}
+{#    <body>#}
+{##}
+{#        <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">#}
+{#            <div class="container-fluid">#}
+{##}
+{#                <div class="navbar-header">#}
+{#                    <a href="#" class="navbar-brand">MAC Library</a>#}
+{#                    <button type="button" class="navbar-toggle" data-target="#navbarCollapse" data-toggle="collapse">#}
+{#                        <span class="sr-only">Toggle Navigation</span>#}
+{#                         <span class="icon-bar"></span>#}
+{#                        <span class="icon-bar"></span>#}
+{#                        <span class="icon-bar"></span>#}
+{#                    </button>#}
+{#                </div>#}
+{##}
+{##}
+{#                <div class="navbar-collapse collapse" id="navbarCollapse">#}
+{#                    <ul class="nav navbar-nav">#}
+{#                        <li class="active"><a href="{% url 'lipapp:index' %}"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>#}
+{#                        <li><a href="{% url 'lipapp:suggestions' %}"><span class="glyphicon glyphicon-list"></span>&nbsp;Suggestions</a></li>#}
+{#                        <li><a href="{% url 'lipapp:newitem' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Suggest Item</a></li>#}
+{#                        <li><a href="{% url 'lipapp:searchlib' %}"><span class="glyphicon glyphicon-search"></span>&nbsp;Search</a></li>#}
+{#                        <li><a href="{% url 'lipapp:about' %}"><span>@</span>&nbsp;About site</a></li>#}
+{#                    </ul>#}
+{##}
+{##}
+{#                    <ul class="nav navbar-nav navbar-right">#}
+{#                    {% if user.is_authenticated %}#}
+{#                        <li><span class="glyphicon glyphicon-user"></span>&nbsp;Hello{{ user.first_name }}</li>#}
+{#                        <li ><a href="#">LogOut<span class="glyphicon glyphicon-off"></span></a></li>#}
+{#                    </ul>#}
+{#                    {% else %}#}
+{#                        <li ><a href="#">LogIn<span class="glyphicon glyphicon-off"></span></a></li>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{##}
+{#            </div>#}
+{#        </nav>#}
+{##}
+{#    <div class="container-fluid" style="margin-top:60px">#}
+{#        <h1>{% block myhdg %}{% endblock %}</h1>#}
+{#        {% block body_block %}{% endblock %}#}
+{#    </div>#}
+{##}
+{##}
+{#    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->#}
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>#}
+{#    <!-- Include all compiled plugins (below), or include individual files as needed -->#}
+{#    <script src="js/bootstrap.min.js"></script>#}
+{#    </body>#}
+{#</html>#}
+{##}

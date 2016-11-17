@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+
+                <div class="list-group col-xs-10 col-md-6">
+                <h2>List of Library Items</h2>
+                    {% for item in itemlist %}
+                        {%if item.itemtype == 'Book' %}
+
+                    <a href="{% url 'lipapp:detail' item.id %}" class="list-group-item"><b>{{ item.title }}</b>
+                    <span class="badge">Book</span></a>
+
+
+                        {% elif item.itemtype == 'DVD'%}
+
+                    <a href="{% url 'lipapp:detail' item.id %}" class="list-group-item"><b>{{ item.title }}</b>
+                        <span class="badge">DVD</span></a>
+
+
+                        {% endif %}
+
+                    {% endfor %}
+                </div>
+
+
+
+
+{#        <ol>#}
+{#                <div class="list-group col-xs-10 col-md-6">#}
+{#                <h2>List of Library Items</h2>#}
+{#                    {% for item in itemlist %}#}
+{#                        {%if item.itemtype == 'Book' %}#}
+{#                    <ul>#}
+{#                    <li><a href="{% url 'lipapp:detail' item.id %}" class="list-group-item"><b>{{ item.title }}</b>#}
+                    {#<span class="glyphicon glyphicon-book"></span></a></li>#}
+{##}
+{#                    </ul>#}
+{#                        {% elif item.itemtype == 'DVD'%}#}
+{#                    <ul>#}
+{#                    <li><a href="{% url 'lipapp:detail' item.id %}" class="list-group-item"><b>{{ item.title }}</b>#}
+                        {#<span class="glyphicon glyphicon-record"></span></a></li>#}
+{##}
+{#                    </ul>#}
+{#                        {% endif %}#}
+{##}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#        </ol>#}
+
+</body>
+</html>

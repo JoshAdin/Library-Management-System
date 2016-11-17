@@ -1,0 +1,19 @@
+{% extends 'lipapp/base.html' %}
+{% block title %}Suggestion Detail{% endblock %}
+
+
+{% block myhdg %}Suggestion Detail{% endblock %}
+
+{%block body_block%}
+<div style="width:400px;">
+    {% if suggestion%}
+            <h3 style="background-color: #a6e1ec"><b>Title: </b>{{ suggestion.title }}</h3>
+            <h3 style="background-color: #e7e7e7"><b>Publish Year: </b>{{ suggestion.pubyr }}</h3>
+            <h3 style="background-color: #a6e1ec"><b>Type: </b>{{suggestion.type }}</h3>
+            <h3 style="background-color: #e7e7e7"><b>Cost: </b>{{ suggestion.cost }}</h3>
+            <h3 style="background-color: #a6e1ec"><b>Comment: </b>{{ suggestion.comments }}</h3>
+    {% endif %}
+ </div>
+
+
+{%endblock%}

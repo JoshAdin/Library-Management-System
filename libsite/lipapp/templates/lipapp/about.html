@@ -1,0 +1,40 @@
+{% extends 'lipapp/base.html' %}
+{% block title %}About us{% endblock %}
+{% block about_active %}active{% endblock %}
+
+{% block myhdg %}About Site{% endblock %}
+
+{%block body_block%}
+
+				<div class="hours" style="margin-top: 80px;">
+
+					<table align="center" cellspacing="0" cellpadding="1" border="1"  >
+
+                        <p align="center" style="font-weight: bold; text-decoration: underline;">LIBRARY HOURS</p>
+                        <tr class="even" >
+							<td>Mondays – Thursdays</td>
+							<td>8:00 am - Midnight</td>
+						</tr>
+						<tr>
+							<td>Fridays</td>
+							<td>8:00 am - 10:00 pm</td>
+						</tr>
+						<tr class="even">
+							<td>Saturdays</td>
+							<td>10:00 am – 6:00 pm</td>
+						</tr>
+						<tr>
+							<td>Sundays</td>
+							<td>Noon – Midnight</td>
+						</tr>
+					</table>
+
+				</div>
+
+
+
+
+    <p>Site visits: {{ visits }}</p>
+    {% block about %}{% endblock %}
+
+{%endblock%}

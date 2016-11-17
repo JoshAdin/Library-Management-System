@@ -1,0 +1,24 @@
+{% extends 'lipapp/base.html' %}
+{% block title %}Item Detail{% endblock %}
+
+
+{% block myhdg %}Item Detail{% endblock %}
+
+{%block body_block%}
+    <div style="width: 400px;">
+    {% if libitem.itemtype == 'Book' %}
+            <h3 style="background-color: #a6e1ec"><b>Title: </b>{{ libitem.title }}</h3>
+            <h3 style="background-color: #e7e7e7"><b>Publish Year: </b>{{ libitem.pubyr }}</h3>
+            <h3 style="background-color: #a6e1ec"><b>Author: </b>{{author }}</h3>
+            <h3 style="background-color: #e7e7e7"><b>Category: </b>{{ category }}</h3>
+
+        {% elif libitem.itemtype == 'DVD'  %}
+            <h3 style="background-color: #a6e1ec"><b>Title: </b>{{ libitem.title }}</h3>
+            <h3 style="background-color: #e7e7e7"><b>Publish Year: </b>{{ libitem.pubyr }}</h3>
+            <h3 style="background-color: #a6e1ec"><b>Maker: </b>{{ maker }}</h3>
+            <h3 style="background-color: #e7e7e7"><b>Duration: </b>{{ duration }}</h3>
+            <h3 style="background-color: #a6e1ec"><b>Rating: </b>{{ rating }}</h3>
+        {% endif %}
+    </div>
+
+{%endblock%}

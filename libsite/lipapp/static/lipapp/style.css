@@ -1,0 +1,48 @@
+
+h1 {
+   text-align: center;
+}
+
+.hbar1 {
+    display: inline;
+    margin: 15px;
+}
+
+.loginPanel, .registerPanel{
+    border-radius: 10px;
+}
+
+
+table {
+   margin-top:20px;
+   border-spacing: 0px;
+   font-weight:bold;
+   }
+
+table td {
+ 	 padding: 5px 30px 5px 10px;
+	 border-spacing: 0px;
+	 font-size: 90%;
+	 margin: 0px;
+	 text-align: center;
+	 background-color: #ffffff;
+	 border-top: 1px solid #000000;
+	 border-bottom: 1px solid #000000;
+	 border-right: 1px solid #000000;
+	 /*text-shadow: 1px 1px 1px #fff;*/
+	 }
+
+ table tr.even  {
+	background-color: #ffffff;
+	}
+
+ .footer{
+    background-color: #5e5e5e;
+    font-size: 15px;
+    padding: 10px 0px;
+	 color: white;
+}
+
+
+
+

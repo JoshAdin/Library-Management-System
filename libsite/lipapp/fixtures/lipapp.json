@@ -1,0 +1,338 @@
+[
+{
+  "model": "lipapp.libuser",
+  "pk": 2,
+  "fields": {
+    "address": "",
+    "city": "Windsor",
+    "province": "ON",
+    "phone": 5195670732,
+    "postalcode": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "lipapp.libuser",
+  "pk": 3,
+  "fields": {
+    "address": "",
+    "city": "Windsor",
+    "province": "ON",
+    "phone": 5195670731,
+    "postalcode": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "lipapp.libuser",
+  "pk": 4,
+  "fields": {
+    "address": "",
+    "city": "Windsor",
+    "province": "ON",
+    "phone": 5195670730,
+    "postalcode": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "lipapp.libuser",
+  "pk": 5,
+  "fields": {
+    "address": "",
+    "city": "Windsor",
+    "province": "ON",
+    "phone": 5195670735,
+    "postalcode": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "lipapp.libuser",
+  "pk": 9,
+  "fields": {
+    "address": null,
+    "city": "Windsor",
+    "province": "ON",
+    "phone": null,
+    "postalcode": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "lipapp.libitem",
+  "pk": 1,
+  "fields": {
+    "title": "Advanced Optical Networks",
+    "itemtype": "Book",
+    "checked_out": false,
+    "user": null,
+    "duedate": "2016-05-31",
+    "last_chkout": null,
+    "date_acquired": "2016-05-18",
+    "pubyr": 2007,
+    "num_chkout": 0
+  }
+},
+{
+  "model": "lipapp.libitem",
+  "pk": 2,
+  "fields": {
+    "title": "Wireless Networks",
+    "itemtype": "Book",
+    "checked_out": false,
+    "user": null,
+    "duedate": "2016-05-30",
+    "last_chkout": null,
+    "date_acquired": "2016-05-18",
+    "pubyr": 2010,
+    "num_chkout": 0
+  }
+},
+{
+  "model": "lipapp.libitem",
+  "pk": 3,
+  "fields": {
+    "title": "The New World",
+    "itemtype": "Book",
+    "checked_out": false,
+    "user": null,
+    "duedate": "2016-05-31",
+    "last_chkout": null,
+    "date_acquired": "2016-05-18",
+    "pubyr": 2011,
+    "num_chkout": 0
+  }
+},
+{
+  "model": "lipapp.libitem",
+  "pk": 4,
+  "fields": {
+    "title": "Python Programming",
+    "itemtype": "Book",
+    "checked_out": true,
+    "user": 3,
+    "duedate": "2016-06-15",
+    "last_chkout": null,
+    "date_acquired": "2016-05-18",
+    "pubyr": 2007,
+    "num_chkout": 0
+  }
+},
+{
+  "model": "lipapp.libitem",
+  "pk": 5,
+  "fields": {
+    "title": "A Good Story",
+    "itemtype": "Book",
+    "checked_out": true,
+    "user": 2,
+    "duedate": "2016-06-13",
+    "last_chkout": null,
+    "date_acquired": "2016-05-18",
+    "pubyr": 2008,
+    "num_chkout": 0
+  }
+},
+{
+  "model": "lipapp.libitem",
+  "pk": 6,
+  "fields": {
+    "title": "A New Adventure",
+    "itemtype": "DVD",
+    "checked_out": false,
+    "user": null,
+    "duedate": null,
+    "last_chkout": null,
+    "date_acquired": "2016-05-18",
+    "pubyr": 2007,
+    "num_chkout": 0
+  }
+},
+{
+  "model": "lipapp.libitem",
+  "pk": 7,
+  "fields": {
+    "title": "Funny Movie",
+    "itemtype": "DVD",
+    "checked_out": true,
+    "user": 4,
+    "duedate": null,
+    "last_chkout": null,
+    "date_acquired": "2016-05-18",
+    "pubyr": 2011,
+    "num_chkout": 0
+  }
+},
+{
+  "model": "lipapp.libitem",
+  "pk": 8,
+  "fields": {
+    "title": "The Big Mystery",
+    "itemtype": "DVD",
+    "checked_out": true,
+    "user": 3,
+    "duedate": null,
+    "last_chkout": null,
+    "date_acquired": "2016-05-18",
+    "pubyr": 2008,
+    "num_chkout": 0
+  }
+},
+{
+  "model": "lipapp.book",
+  "pk": 1,
+  "fields": {
+    "author": "John Smith",
+    "category": 4
+  }
+},
+{
+  "model": "lipapp.book",
+  "pk": 2,
+  "fields": {
+    "author": "Mary Hall",
+    "category": 4
+  }
+},
+{
+  "model": "lipapp.book",
+  "pk": 3,
+  "fields": {
+    "author": "John King",
+    "category": 4
+  }
+},
+{
+  "model": "lipapp.book",
+  "pk": 4,
+  "fields": {
+    "author": "Alan Jones",
+    "category": 4
+  }
+},
+{
+  "model": "lipapp.book",
+  "pk": 5,
+  "fields": {
+    "author": "Mary Hall",
+    "category": 1
+  }
+},
+{
+  "model": "lipapp.dvd",
+  "pk": 6,
+  "fields": {
+    "maker": "Sony",
+    "duration": 90,
+    "rating": ""
+  }
+},
+{
+  "model": "lipapp.dvd",
+  "pk": 7,
+  "fields": {
+    "maker": "Pixar",
+    "duration": 90,
+    "rating": ""
+  }
+},
+{
+  "model": "lipapp.dvd",
+  "pk": 8,
+  "fields": {
+    "maker": "Sony",
+    "duration": 45,
+    "rating": ""
+  }
+},
+{
+  "model": "lipapp.suggestion",
+  "pk": 8,
+  "fields": {
+    "title": "Django Unchained",
+    "pubyr": 2008,
+    "type": 2,
+    "cost": 50,
+    "num_interested": 1,
+    "comments": "No Comment"
+  }
+},
+{
+  "model": "lipapp.suggestion",
+  "pk": 9,
+  "fields": {
+    "title": "Ted Dekker: RED",
+    "pubyr": 2009,
+    "type": 1,
+    "cost": 48,
+    "num_interested": 1,
+    "comments": "No Comment"
+  }
+},
+{
+  "model": "lipapp.suggestion",
+  "pk": 10,
+  "fields": {
+    "title": "No Relevant",
+    "pubyr": 2014,
+    "type": 2,
+    "cost": 90,
+    "num_interested": 1,
+    "comments": "No Comments"
+  }
+},
+{
+  "model": "lipapp.suggestion",
+  "pk": 11,
+  "fields": {
+    "title": "Pillars of Destiny",
+    "pubyr": 2011,
+    "type": 1,
+    "cost": 50,
+    "num_interested": 1,
+    "comments": "No Comments"
+  }
+},
+{
+  "model": "lipapp.suggestion",
+  "pk": 12,
+  "fields": {
+    "title": "The Wisdom That Works",
+    "pubyr": 2011,
+    "type": 1,
+    "cost": 50,
+    "num_interested": 1,
+    "comments": "No Comments"
+  }
+},
+{
+  "model": "lipapp.suggestion",
+  "pk": 13,
+  "fields": {
+    "title": "Possessing Your Possession",
+    "pubyr": 2011,
+    "type": 1,
+    "cost": 50,
+    "num_interested": 1,
+    "comments": "No Comments"
+  }
+},
+{
+  "model": "lipapp.suggestion",
+  "pk": 14,
+  "fields": {
+    "title": "new book",
+    "pubyr": 2016,
+    "type": 1,
+    "cost": 50,
+    "num_interested": 1,
+    "comments": "no comment"
+  }
+}
+]

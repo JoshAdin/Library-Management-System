@@ -1,0 +1,32 @@
+{% extends 'lipapp/base.html' %}
+{% block title %}New Item{% endblock %}
+{% block newitem_active %}active{% endblock %}
+{% block myhdg %}Suggest Item{% endblock %}
+
+{% block body_block %}
+    <p style="margin-bottom: 20px;"><b>YOU CAN SUGGEST A NEW ITEM FOR PURCHASE HERE</b></p>
+
+    {% if message %}
+        <div id="alert2" class="alert alert-danger col-md-4">
+            <a class="close" data-dismiss="alert">&times;
+            </a><strong>{{ message }}</strong>
+        </div>
+        {% endif %}
+
+    <div class="itemForm" style="width: 500px">
+        <form action="/lipapp/newitem/" method="post">
+            {% csrf_token %}
+            {% include 'lipapp/form-template.html' %}
+
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-10">
+                <button type="submit" class="btn btn-info" style="width:80px; margin-bottom: 100px;">Submit</button>
+            </div>
+        </div>
+
+        </form>
+
+
+    </div>
+
+{% endblock %}

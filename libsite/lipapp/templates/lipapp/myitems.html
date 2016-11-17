@@ -1,0 +1,40 @@
+{% extends 'lipapp/base.html' %}
+{% block title %}My Items{% endblock %}
+{% block myitem_active%}active{% endblock %}
+{% block myhdg %}My Items{% endblock %}
+
+{%block body_block%}
+
+
+
+        <div style="margin-left: 80px;"><h2>Library Items Checked Out</h2></div>
+        {% if itemlist %}
+        <div class="list-group col-xs-10 col-md-6">
+
+        <ul>
+            {% for item in itemlist %}
+
+                 {%if item.itemtype == 'Book' %}
+                <ul>
+                <li  class="list-group-item"><b>{{ item.title }}</b><span class="badge">Book</span></li>
+                </ul>
+
+                 {%elif item.itemtype == 'DVD' %}
+                 <ul>
+                <li class="list-group-item"><b>{{ item.title }}</b><span class="badge">DVD</span></li>
+                </ul>
+                {% endif %}
+
+            {% endfor %}
+        </ul>
+        </div>
+
+    {% else %}
+        <div id="alert2" class="alert alert-warning">
+            <a class="close" data-dismiss="alert">&times;
+            </a> <strong>There are no checked out items!</strong>
+         </div>
+    {% endif %}
+
+{%endblock%}
+

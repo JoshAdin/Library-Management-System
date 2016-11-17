@@ -1,0 +1,76 @@
+{% extends 'lipapp/base.html' %}
+{% block title %}Login{% endblock %}
+
+
+{% block body_block %}
+
+      <div class="container-fluid " style="margin-top:60px">
+          <div class="row ">
+              <div class="col-sm-12 col-md-4">
+                  <div class="panel panel-default registerPanel">
+                      <div class="panel-body">
+
+
+                  <h3 style="margin-bottom:30px; ">Register</h3>
+                {% if success_message %}
+                  <div id="alert1" class="alert alert-success">
+                    <a class="close" data-dismiss="alert">&times;
+                    </a><strong>{{ success_message }}</strong><a href='/accounts/login'>Click here to login</a>
+                  </div>
+                {% endif %}
+
+                {% if error_message %}
+                  <div id="alert2" class="alert alert-danger">
+                    <a class="close" data-dismiss="alert">&times;
+                    </a><strong>{{ error_message }}</strong>
+                  </div>
+                {% endif %}
+
+                        <form action="/lipapp/register/"  role="form" method="post" class="form-horizontal">
+                            {% csrf_token %}
+                            {% include 'lipapp/form-template.html' %}
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-10">
+                                    <button type="submit" class="btn btn-success" style="width:80px;">Register</button>
+                                    <button type="reset"  value="reset" class="btn btn-success" style="width:80px;">Clear</button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+{% endblock %}
+
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>MAC Library APP - Register</title>#}
+{#</head>#}
+{#<body>#}
+{#    {% if success_message %}#}
+{#        <p style="color: green"><strong>{{ success_message }} </strong> <a href='/accounts/login'>Click here to login</a> </p>#}
+{#    {% endif %}#}
+{##}
+{#    {% if error_message %}#}
+{#        <p style="color: red"><strong>{{ error_message }} </strong>#}
+{#    {% endif %}#}
+{##}
+{#        <form action="/lipapp/register/" method="post">#}
+{#            {% csrf_token %}#}
+{#                {{ form|linebreaks }}#}
+{#            <input type="submit" value="Register">#}
+{#        </form>#}
+{##}
+{#</body>#}
+{#</html>#}
+

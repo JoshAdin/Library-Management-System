@@ -1,0 +1,49 @@
+{% extends 'lipapp/base.html' %}
+{% block title %}Login{% endblock %}
+
+
+
+    {% block body_block %}
+      <div class="container-fluid "  style="margin-top:60px">
+
+          <div class="row" style=" ">
+              <div class="col-sm-12 col-md-4">
+                  <div class="panel panel-default loginPanel">
+                      <div class="panel-body">
+
+                    <h3 style="margin-bottom:30px; ">Log In</h3>
+                      {% if error_message %}
+                      <div id="alert1" class="alert alert-danger">
+                        <a class="close" data-dismiss="alert">&times;
+                        </a><strong>{{ error_message }}</strong>
+                     </div>
+                      {% endif %}
+
+                        <form action="/accounts/login/" role="form" method="post" class="form-horizontal">
+                            {% csrf_token %}
+                            {% include 'lipapp/form-template.html' %}
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-10">
+                                    <button type="submit" class="btn btn-info">Login</button>
+                                </div>
+                            </div>
+{#                             <p align="right"><input type="submit" value="Login"></p>#}
+                        </form>
+{#    </div>#}
+
+{#        <p><a href="{% url 'lipapp:register' %}">Not Register?</a></p>#}
+
+                      </div>
+
+                      <div class="panel-footer">
+                            Don't have an account? <a href="{% url 'lipapp:register' %}">Click here</a> to register.
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+
+      </div>
+      {% endblock %}
+

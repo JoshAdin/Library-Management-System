@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+
+        {% if libitem.itemtype == 'Book' %}
+            <p><b>Title: </b>{{ libitem.title }}</p>
+            <p><b>Publish Year: </b>{{ libitem.pubyr }}</p>
+            <p><b>Author: </b>{{author }}</p>
+            <p><b>Category: </b>{{ category }}</p>
+
+        {% elif libitem.itemtype == 'DVD'  %}
+            <p><b>Title: </b>{{ libitem.title }}</p>
+            <p><b>Publish Year: </b>{{ libitem.pubyr }}</p>
+            <p><b>Maker: </b>{{ maker }}</p>
+            <p><b>Duration: </b>{{ duration }}</p>
+            <p><b>Rating: </b>{{ rating }}</p>
+        {% endif %}
+
+</body>
+</html>

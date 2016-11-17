@@ -1,0 +1,43 @@
+{% extends 'lipapp/base.html' %}
+{% block title %}Search{% endblock %}
+{% block search_active %}active{% endblock %}
+{% block myhdg %}Search for Item{% endblock %}
+
+{% block body_block %}
+
+
+    <div class="searchItem"  style="width: 350px">
+         {% if message %}
+        <div id="alert2" class="alert alert-danger">
+            <a class="close" data-dismiss="alert">&times;
+            </a><strong>{{ message }}</strong>
+        </div>
+        {% endif %}
+
+        <form action="/lipapp/searchlib/" method="post">
+            {% csrf_token %}
+            {% include 'lipapp/form-template.html' %}
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-10">
+                    <button type="submit" class="btn btn-info" style="width:80px;">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="list-group col-xs-10 col-md-6">
+     {% if results %}
+        <ul>
+            {% for item in results %}
+                <ul>
+                <li><a href="{% url 'lipapp:detail' item.id %}" class="list-group-item">{{ item.title }} - {{ item.itemtype }}</a></li>
+                </ul>
+            {% endfor %}
+        </ul>
+     </div>
+
+    {% endif %}
+
+{% endblock %}
